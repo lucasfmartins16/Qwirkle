@@ -7,9 +7,12 @@
 int main(void) {
   //Numero de jogadores
   int num_jog;
+  char e[10];
+  do{
   printf("Numero de jogadores: ");
-  scanf("%d",&num_jog);
-  
+  fgets(e, 9, stdin);
+  num_jog = atoi(e);
+  }while(num_jog < 1 || num_jog > 18);
   //Lista de jogadores alocada dinamicamente
   char **nomes =(char **) malloc(sizeof(char *)*num_jog);
   if(!nomes){
